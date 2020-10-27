@@ -1,0 +1,9 @@
+function Z=numerical_solution(z, f, G, T, h)
+% tbd
+
+Z=zeros(ceil(T./h)+1,1);
+Z(1)=z(1);
+for k=2:length(Z)
+    Z(k)=z(k)+ f((1:k-1)', Z(k-1:-1:1))'*(G(2:k)-G(1:k-1));
+end
+end
